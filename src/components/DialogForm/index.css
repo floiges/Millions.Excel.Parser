@@ -1,0 +1,17 @@
+// 覆盖dialog的样式
+.dialog_form .ant-modal-body {
+  padding: 24px 24px 24px 24px;
+}
+.dialog_form_2 .ant-modal-body {
+  padding-bottom: 0px;
+}
+.dialog_form .ant-modal-confirm-body-wrapper::after {
+  display: none;
+}
+.dialog_form .ant-modal-confirm-btns {
+  margin-top: 0 !important;
+}
+.check_box .ant-checkbox-group-item {
+  display: block;
+  margin-top: 10px;
+}
