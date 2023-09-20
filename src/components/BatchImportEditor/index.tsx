@@ -59,13 +59,19 @@ const BatchImportEditor: React.FC<any> = () => {
 
   const handleParse = () => {
     form.validateFields().then(values => {
+      const { distinct_col, sum_cols } = values
+      if (sum_cols.includes(distinct_col)) {
+        message.warning('需要去重和合并的列名不能相同')
+        return
+      }
+
       setLoading(true)
       worker.current?.postMessage({ event: 'parse', options: values })
     })
   }
 
   return (
-    <Spin spinning={loading} tip='正在处理中...'>
+    <Spin spinning={loading} tip='正在处理中，请稍后...' style={{ minHeight: 752 }}>
       <Card title='Step1：选择文件上传'>
         <div className="dragger">
           <Dragger
