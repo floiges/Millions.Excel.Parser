@@ -77,7 +77,7 @@ const BatchImportEditor: React.FC<any> = () => {
           <Dragger
             showUploadList
             listType="text"
-            accept={'.xlsx'}
+            accept={'.xlsx,.csv'}
             name="file"
             beforeUpload={onLocalBeforeUpload}>
               <div className="ant-upload-drag-icon">
